@@ -122,12 +122,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'Templates/static').replace('\\', '/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'Templates/static')
 STATICFILES_DIRS = (
-    ('css', os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
-    ('images', os.path.join(STATIC_ROOT, 'images').replace('\\', '/')),
-    ('fonts', os.path.join(STATIC_ROOT, 'fonts').replace('\\', '/')),
-    ('js', os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
-    ('book_images', os.path.join(STATIC_ROOT, 'book_images').replace('\\', '/')),
+    ('css', os.path.join(STATIC_ROOT, 'css')),
+    ('images', os.path.join(STATIC_ROOT, 'images')),
+    ('fonts', os.path.join(STATIC_ROOT, 'fonts')),
+    ('js', os.path.join(STATIC_ROOT, 'js')),
+    ('book_images', os.path.join(STATIC_ROOT, 'book_images')),
 )
 
