@@ -9,3 +9,5 @@ book.db
 **/migrations
 
 **/__pycache__
+
+.idea/
