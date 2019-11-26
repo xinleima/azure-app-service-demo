@@ -1,0 +1,11 @@
+venv/
+
+**/.DS_Store
+
+数据库表格/
+
+book.db
+
+**/migrations
+
+**/__pycache__

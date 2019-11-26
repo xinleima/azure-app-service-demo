@@ -1,0 +1,213 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>superchange_info2</title>
+    <style>
+        @font-face {
+            font-family: new;
+            src: url(/static/fonts/a.ttf);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="/static/css/icomoon.css">
+    <!-- Themify Icons-->
+    <link rel="stylesheet" href="/static/css/themify-icons.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Modernizr JS -->
+    <script src="/static/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="gtco-loader"></div>
+
+    <div id="page">
+
+
+        <div class="page-inner">
+            <nav class="gtco-nav" role="navigation">
+                <div class="gtco-container">
+
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12">
+                            <div id="gtco-logo">Welcome to Durian Book City <em>.</em></div>
+                        </div>
+                        <div class="col-xs-8 text-right menu-1">
+                            <ul>
+                                <li><a href="/search">书籍查询</a></li>
+                                <li> <a href="/changebook_info/">书籍管理</a></li>
+                                <li><a href="/purchase/">进货</a></li>
+                                <li class="has-dropdown">
+                                    <a href="#">账单</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/viewaccount3">所有账单</a></li>
+                                        <li><a href="/viewaccount2">进货账单</a></li>
+                                        <li><a href="/viewaccount1">销售账单</a></li>
+
+                                    </ul>
+                                </li>
+                                <li title="{{UserID}}"><a href="/commonchange_info">个人信息</a></li>
+
+
+                                <li class="has-dropdown">
+                                    <a href="#">管理员管理</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/superview_info/">查看</a></li>
+                                        <li><a href="/manager_register">雇佣</a></li>
+                                        <li><a href="/superchange_info/">修改</a></li>
+                                        <li><a href="/manager_delete">解雇</a></li>
+                                    </ul>
+                                </li>
+
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+
+            <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(/static/images/img_4.jpg)">
+                <div class="overlay"></div>
+                <div class="gtco-container">
+                    <div class="row">
+                        <div class="col-md-12 col-md-offset-0 text-left">
+                            <div class="row row-mt-15em">
+
+                                <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+                                    <span class="intro-text-small">Don't be shy</span>
+                                    <h1>Get In Touch</h1>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            {% for book in book_list %}
+            <div class="gtco-section border-bottom">
+                <div class="gtco-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6 animate-box">
+                                <h3>书籍信息</h3>
+                                <form action="/bookchange_info" method="post">
+                                    {% csrf_token %}
+
+
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <nobr>
+                                                <span style="margin-right:7px">书名： </span>
+                                                <label class="sr-only" for="password">password</label>
+                                                <input type="text" class="form-control" id="title" name="title" placeholder={{book.title}}>
+                                            </nobr>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <nobr>
+                                                <span style="margin-right:7px">作者： </span>
+                                                <label class="sr-only" for="name">name</label>
+                                                <input type="text" name="writer" id="writer" class="form-control" placeholder={{book.writer}}>
+                                            </nobr>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <nobr>
+                                                <span style="margin-right:7px">出版社： </span>
+                                                <label class="sr-only" for="age">age</label>
+                                                <input type="text" name="press" id="press" class="form-control" placeholder={{book.press}}>
+                                            </nobr>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <nobr>
+                                                <span style="margin-right:7px">定价： </span>
+                                                <label class="sr-only" for="age">age</label>
+                                                <input type="text" name="price" id="price" class="form-control" placeholder={{book.price}}>
+                                            </nobr>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <nobr>
+                                                <span style="margin-right:33px">折扣: </span>
+                                                <label class="sr-only" for="Mana_ID">Mana_ID</label>
+                                                <input type="text" id="discount" name="discount" class="form-control" placeholder={{book.discount}}>
+                                            </nobr>
+                                        </div>
+
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <nobr>
+                                                <span style="margin-right:2px">图片：</span>
+                                                <label class="sr-only" for="username">username</label>
+                                                <input type="file" id="image" name="image" class="form-control" placeholder={{book.image}}>
+                                            </nobr>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="修改" class="btn btn-primary">
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="/static/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <!-- countTo -->
+    <script src="/static/js/jquery.countTo.js"></script>
+    <!-- Magnific Popup -->
+    <script src="/static/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/js/magnific-popup-options.js"></script>
+    <!-- Main -->
+    <script src="/static/js/main.js"></script>
+
+</body>
+</html>
+
